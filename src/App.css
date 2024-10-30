@@ -1,26 +1,76 @@
 .App {
   text-align: center;
+  box-sizing: border-box;
 }
 
 .cardsContainer{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 4rem;
   padding: 2rem;
 }
 
+.addCardsBtn{
+  font-size:xx-large;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card{
-  height: 10rem;
+  height: 15rem;
   display: grid;
-  grid-template-rows: 80% 90%;
+  grid-template-rows: 80% 20%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 9px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 1rem;
+}
+.card .textInCard{
+  grid-row: 1/2;
+}
+.card input[type="text"]{
+  padding: 0.5rem;
+  border: 0 none #fff;
+  height: fit-content;
+  margin: 0.5rem;
 }
 .card p{
-  grid-row: 1/2;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  height: max-content;
 }
 .card div{
   grid-row: 2/3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .card button{
   background-color: rgba(0, 0, 0, 0);
   border: 0 none #fff;
+}
+.cardTrash{
+  margin-right: 1rem;
+  font-size: larger;
+  cursor: pointer;
+}
+.cardColor{
+  padding: 0.5rem;
+}
+.colorsPalette{
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  height: max-content;
+  grid-column: 1/2;
+}
+.color{
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  border:0.5px solid #fff;
+  display: inline;
+  cursor: pointer;
 }
