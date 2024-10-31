@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoMdTrash } from "react-icons/io";
 import services from '../services/CRUD';
 import ColorsPalette from './ColorsPalette'
 
-function Card({ card, handleDelete, colors }) {
+function Card({ card, handleDelete, colors , handleEdit }) {
     const [editText, setEditText] = useState(false);
     const [editColor, setEditColor] = useState(false);
     const [cardData, setCardData] = useState(card);
+
+    useEffect(()=>{
+        handleEdit(cardData);
+    },[cardData])
 
     const handleChange = (e) => {
         const { name, value } = e.target;

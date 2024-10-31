@@ -54,6 +54,13 @@ function Cards() {
         setCardsToShow(filteredCards);
     }
 
+    const handleEdit = (editedCard) => {
+        let index = cards.findIndex(c => c.id===editedCard.id);
+        let newCards = [...cards];
+        newCards[index] = editedCard;
+        setCards(newCards);
+    }
+
     return (
         <>
             <div class="search-container">
@@ -62,7 +69,7 @@ function Cards() {
             </div>
             <div className='cardsContainer'>
                 {cardsToShow.map(card =>
-                    <Card key={card.id} card={card} handleDelete={handleDelete} colors={colors} />
+                    <Card key={card.id} card={card} handleDelete={handleDelete} colors={colors} handleEdit={handleEdit} />
                 )}
                 <div className='addCardsBtn' onClick={handleAdd}>
                     <FaPlus />
